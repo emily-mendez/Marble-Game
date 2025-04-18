@@ -1,0 +1,13 @@
+all: mendez_p2
+
+mendez_p2: mendez_p2.o GameSim.o
+	g++ GameSim.o mendez_p2.o -o mendez_p2
+
+mendez_p2.o: mendez_p2.cpp GameSim.h
+	g++ -c mendez_p2.cpp
+
+GameSim.o: GameSim.cpp GameSim.h
+	g++ -c GameSim.cpp
+
+clean: 
+	rm -f *.o mendez_p2
